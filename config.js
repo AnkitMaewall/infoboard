@@ -4,11 +4,11 @@ exports.config = {
 	animated_transitions: false
 	, screens: [
 		{
-			  cmd: "./screens/test.sh"
+			  cmd: "/bin/sh ./screens/test.sh"
 			, hold_for: tick
 		}
 		, {
-			  cmd: "./screens/clock.sh"
+			  cmd: "/bin/sh ./screens/clock.sh"
 			, hold_for: tick
 		}
 	]

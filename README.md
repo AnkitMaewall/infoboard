@@ -24,6 +24,10 @@ setting the data for the infoboard up. This is an example for a `config.js`.
 		]
 	};
 
+This is an example of a script for a screen (`./screens/clock.sh`):
+
+	#!/bin/sh
+	echo '<h1>' `date` '</h1>'
 
 
 ## Installation
