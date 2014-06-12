@@ -1,3 +1,3 @@
 #!/bin/sh
 
-date
+echo '<h1>' `date` '</h1>'

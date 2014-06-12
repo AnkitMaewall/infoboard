@@ -6,12 +6,13 @@ block jumbotron
 		each s in config.screens
 			- scnt++;
 			div.jumbotron.index-jumbotron.pt-page(class="pt-page-#{scnt}",data-hold_for="#{s.hold_for}")
-				p empty
+				div.container
+					div.row.text-center#content
 
 	script(type="text/javascript").
 		function displayScreen(id) {
 			$.get("/screens/" + id, function (data) {
-				$(".pt-page-" + id).html(data);
+				$(".pt-page-" + id + " #content").html(data);
 
 				if (id > 0) {
 					if (#{config.animated_transitions}) {
