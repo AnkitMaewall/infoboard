@@ -10,6 +10,10 @@ block jumbotron
 					div.row.text-center#content
 
 	script(type="text/javascript").
+		var transitionnr = 0;
+		var pageTransition;
+		var currPage = 0;
+
 		function displayScreen(id) {
 			$.get("/screens/" + id, function (data) {
 				$(".pt-page-" + id + " #content").html(data);
@@ -18,11 +22,13 @@ block jumbotron
 					if (#{config.animated_transitions}) {
 						var transitions = [36, 32, 35, 37];
 						pageTransition.nextPage(transitions[transitionnr], function() {
+							incrementPage();
 							transitionnr = (transitionnr + 1) % transitions.length;
 						});
 					} else {
-						pageTransition.nextPage(1, function() {
-						});
+						$(".pt-page-" + currPage).removeClass("pt-page-current");
+						incrementPage();
+						$(".pt-page-" + currPage).addClass("pt-page-current");
 					}
 				}
 
@@ -32,8 +38,9 @@ block jumbotron
 			});
 		}
 
-		var transitionnr = 0;
-		var pageTransition;
+		function incrementPage() {
+			currPage = (currPage+1) % #{config.screens.length};
+		}
 
 		$(function() {
 			pageTransition = PageTransitions();

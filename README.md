@@ -40,6 +40,7 @@ Set up X and install those packages:
 	sudo pacman -S make
 	sudo pacman -S git
 	sudo pacman -S nodejs
+	sudo npm install forever -g
 	sudo pacman -S base-devel abs
 
 	git clone ...
@@ -71,6 +72,17 @@ instructions, which summarized are:
 
 	systemctl daemon-reload
 	systemctl start getty@tty1.service
+
+
+## `.xinitrc`
+
+	unclutter &
+
+	(cd /root/infoboard && forever start infoterminal.js)
+
+	(sleep 10 && echo "set show_status=0" | uzbl-browser --config - http://localhost:8001) &
+
+	exec dwm 
 
 
 # License

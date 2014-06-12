@@ -4,7 +4,7 @@ exports.config = {
 	animated_transitions: false
 	, screens: [
 		{
-			  cmd: "/bin/sh ./screens/test.sh"
+			  cmd: "/bin/sh ./screens/quote-of-the-day.sh"
 			, hold_for: tick
 		}
 		, {
