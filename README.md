@@ -3,9 +3,9 @@
 **Project status: Heavy WIP. Just started.**
 
 The goal of this project is to provide a very simple infoboard.
-All information, which is displayed, comes from external scripts. This is 
-not part of this application, instead the configuration file provides the way 
-of setting the data for the infoboard up. 
+All information which is displayed comes from external scripts. Fetching or
+preparing information is not part of this application, instead the 
+configuration file provides the way of setting the data for the infoboard up. 
 This is an example for a `config.js`.
 	
 	exports.config = {
@@ -31,8 +31,19 @@ This is an example of a script for an information screen
 
 ## Installation
 
+### The simple way
+
+	git clone https://github.com/cmichi/infoboard.git
+	cd infoboard/
+	npm install
+	node infoterminal.js
+	firefox http://localhost:8001/ &
+
+
+### The full way
+
 I use the Arch distribution for the RaspberryPi.
-Set up X and install those packages:
+After setting up X, I installed these packages:
 
 	sudo pacman -S unclutter
 	sudo pacman -S uzbl-browser
