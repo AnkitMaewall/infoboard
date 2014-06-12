@@ -142,3 +142,9 @@ body {
     from { opacity: 0; transform: scale(.7); }
 }
 
+#content h1 {
+	font-size:70px;
+	font-weight:normal;
+	color: white;
+	font-family: 'Amaranth',sans-serif;
+}
