@@ -2,16 +2,14 @@
 
 **Project status: Heavy WIP. Just started.**
 
-The goal of this project is to provide a simple infoboard.
-The application does nothing else than to provide a simple way
-of displaying an infoboard.
-
-The data, which is displayed, comes from external scripts.  This is not part 
-of this application, instead the configuration file provides the way of 
-setting the data for the infoboard up. This is an example for a `config.js`.
+The goal of this project is to provide a very simple infoboard.
+All information, which is displayed, comes from external scripts. This is 
+not part of this application, instead the configuration file provides the way 
+of setting the data for the infoboard up. 
+This is an example for a `config.js`.
 	
 	exports.config = {
-		animated_transitions: false
+		animated_transitions: true
 		, screens: [
 			{
 				  cmd: "./screens/fortune.sh"
@@ -24,7 +22,8 @@ setting the data for the infoboard up. This is an example for a `config.js`.
 		]
 	};
 
-This is an example of a script for a screen (`./screens/clock.sh`):
+This is an example of a script for an information screen 
+(`./screens/clock.sh`):
 
 	#!/bin/sh
 	echo '<h1>' `date` '</h1>'
