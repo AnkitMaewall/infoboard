@@ -1,0 +1,41 @@
+extends layout
+
+block jumbotron
+	div.pt-perspective#pt-main
+		- var scnt = -1;
+		each s in config.screens
+			- scnt++;
+			div.jumbotron.index-jumbotron.pt-page(class="pt-page-#{scnt}",data-hold_for="#{s.hold_for}")
+				p empty
+
+	script(type="text/javascript").
+		function displayScreen(id) {
+			$.get("/screens/" + id, function (data) {
+				$(".pt-page-" + id).html(data);
+
+				if (id > 0) {
+					if (#{config.animated_transitions}) {
+						var transitions = [36, 32, 35, 37];
+						pageTransition.nextPage(transitions[transitionnr], function() {
+							transitionnr = (transitionnr + 1) % transitions.length;
+						});
+					} else {
+						pageTransition.nextPage(1, function() {
+						});
+					}
+				}
+
+				var hold_for = parseInt( $(".pt-page-" + id).attr("data-hold_for") );
+				var nextId = (id + 1) % #{config.screens.length};
+				setTimeout("displayScreen(" + nextId + ")", hold_for);
+			});
+		}
+
+		var transitionnr = 0;
+		var pageTransition;
+
+		$(function() {
+			pageTransition = PageTransitions();
+			pageTransition.init();
+			displayScreen(0);
+		});
