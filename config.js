@@ -4,6 +4,10 @@ exports.config = {
 	animated_transitions: false
 	, screens: [
 		{
+			  cmd: "/bin/bash ./screens/wikipedia-featured-article.sh"
+			, hold_for: tick
+		}
+		, {
 			  cmd: "/bin/bash ./screens/nichtlustig.sh"
 			, hold_for: tick
 		}
