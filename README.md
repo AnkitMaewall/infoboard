@@ -31,16 +31,19 @@ This is an example of a script for an information screen
 
 ## Installation
 
-### The simple way
+### The simple way (meaning you already have a kiosk system set up)
 
 	git clone https://github.com/cmichi/infoboard.git
 	cd infoboard/
 	npm install
+
+	make ./static/tmp/
 	node infoterminal.js
+
 	firefox http://localhost:8001/ &
 
 
-### The full way
+### The full way (meaning you start from zero)
 
 I use the Arch distribution for the RaspberryPi.
 After setting up X, I installed these packages:
