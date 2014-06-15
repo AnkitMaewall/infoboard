@@ -52,6 +52,7 @@ After setting up X, I installed these packages:
 	sudo pacman -S nodejs
 	sudo npm install forever -g
 	sudo pacman -S base-devel abs
+	sudo pacman -S xorg-server-utils
 
 	git clone ...
 	cd ./dwm/
