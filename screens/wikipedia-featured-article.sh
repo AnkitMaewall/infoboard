@@ -29,10 +29,15 @@ fi
 
 echo '
 	<div style="text-align:left">
-		<img align="left" src="/tmp/wiki-faotd.jpg" />
-		<p>'
+		<img align="right" src="/tmp/wiki-faotd.jpg" style="padding-left:25px;" />
+		<blockquote>
+		'
 
 cat /tmp/wiki-faotd.txt
 echo '
-		</p>
+		</blockquote>
+	</div>
+	<div style="text-align:center">
+	<br/><br/>
+	&mdash;Wikipedia Featured Article of the Day&mdash;
 	</div>'

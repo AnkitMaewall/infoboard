@@ -1,4 +1,5 @@
-var tick = 1000;
+//var tick = 1000 * 60 * 60;
+var tick = 1000 * 1;
 
 exports.config = {
 	animated_transitions: false
