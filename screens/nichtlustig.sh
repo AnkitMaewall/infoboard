@@ -11,7 +11,8 @@ then
 		| head -n1 						\
 		| sed -e 's/^\s*>//g' 					\
 		| sed -e 's/<[\/]*url>//g'				\
-		| xargs curl > $TMP_FOLDER/nichtlustig.jpg
+		| xargs curl 						\
+		> $TMP_FOLDER/nichtlustig.jpg
 fi
 
 echo '<img src="/tmp/nichtlustig.jpg" />'

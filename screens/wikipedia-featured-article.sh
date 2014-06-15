@@ -4,7 +4,7 @@ TMP_FOLDER="./static/tmp/"
 # does a file from today exist?
 if [ ! `find "/tmp/wiki-faotd.xml" -mtime -1 2> /dev/null` ]; 
 then
-	echo "fetching wiki stuff..."
+	#echo "fetching wiki stuff..."
 	curl "http://en.wikipedia.org/w/api.php?action=query&action=featuredfeed&feed=featured" > /tmp/wiki-faotd.xml
 
 	xmllint --xpath '(//description)[last()]/text()' /tmp/wiki-faotd.xml \
