@@ -14,28 +14,30 @@ block jumbotron
 		var pageTransition;
 		var currPage = 0;
 
-		function displayScreen(id) {
-			$.get("/screens/" + id, function (data) {
-				$(".pt-page-" + id + " #content").html(data);
+		function displayScreen(_id) {
+			(function(id) {
+				$.get("/screens/" + id, function (data) {
+					$(".pt-page-" + id + " #content").html(data);
 
-				if (id > 0) {
-					if (#{config.animated_transitions}) {
-						var transitions = [36, 32, 35, 37];
-						pageTransition.nextPage(transitions[transitionnr], function() {
+					if (id > 0) {
+						if (#{config.animated_transitions}) {
+							var transitions = [36, 32, 35, 37];
+							pageTransition.nextPage(transitions[transitionnr], function() {
+								incrementPage();
+								transitionnr = (transitionnr + 1) % transitions.length;
+							});
+						} else {
+							$(".pt-page-" + currPage).removeClass("pt-page-current");
 							incrementPage();
-							transitionnr = (transitionnr + 1) % transitions.length;
-						});
-					} else {
-						$(".pt-page-" + currPage).removeClass("pt-page-current");
-						incrementPage();
-						$(".pt-page-" + currPage).addClass("pt-page-current");
+							$(".pt-page-" + currPage).addClass("pt-page-current");
+						}
 					}
-				}
 
-				var hold_for = parseInt( $(".pt-page-" + id).attr("data-hold_for") );
-				var nextId = (id + 1) % #{config.screens.length};
-				setTimeout("displayScreen(" + nextId + ")", hold_for);
-			});
+					var hold_for = parseInt( $(".pt-page-" + id).attr("data-hold_for") );
+					var nextId = (id + 1) % #{config.screens.length};
+					setTimeout("displayScreen(" + nextId + ")", hold_for);
+				});
+			})(_id);
 		}
 
 		function incrementPage() {

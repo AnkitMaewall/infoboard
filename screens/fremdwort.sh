@@ -5,7 +5,7 @@ echo '
 	<div style="text-align:left;">'
 
 # does a file from today exist?
-if [ ! `find "/tmp/fremdwort.xml" -mtime -1 2> /dev/null` ]; 
+if [ ! `find "/tmp/fremdwort.xml" -daystart -mtime 0 2> /dev/null` ]; 
 then
 	echo "fetching fremdwort..."
 	curl "http://neueswort.de/feed/" > /tmp/fremdwort.xml
@@ -21,17 +21,18 @@ then
 fi
 
 
-echo '<h1 style="margin-bottom:0.8em;">'
+echo '
+<h3>Fremdwort des Tages</h3>
+<br/>
+<h1 style="margin-bottom:0.6em;">'
 cat $TMP_FOLDER/fremdwort.txt
 echo '</h1>'
 
+
+echo '<p style="font-size:1.6em">'
 #echo '<blockquote>'
 cat $TMP_FOLDER/fremdwort-desc.txt
 #echo '</blockquote>'
 
-echo '
-	</div>
-	<div style="text-align:center">
-	<br/><br/>
-	&mdash;Wikipedia Featured Article of the Day&mdash;
+echo '</p>
 	</div>'

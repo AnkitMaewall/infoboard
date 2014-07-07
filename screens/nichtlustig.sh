@@ -3,7 +3,7 @@
 TMP_FOLDER="./static/tmp/"
 
 # does a file from today exist?
-if [ ! `find "$TMP_FOLDER/nichtlustig.jpg" -mtime -1 2> /dev/null` ]; 
+if [ ! `find "$TMP_FOLDER/nichtlustig.jpg" -daystart -mtime 0 2> /dev/null` ]; 
 then
 	echo "creating file..."
 	curl "http://static.nichtlustig.de/rss/nichtrss.rss" 		\
@@ -15,4 +15,4 @@ then
 		> $TMP_FOLDER/nichtlustig.jpg
 fi
 
-echo '<img src="/tmp/nichtlustig.jpg" />'
+echo '<img width="50%" src="/tmp/nichtlustig.jpg" />'
