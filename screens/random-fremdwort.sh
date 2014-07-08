@@ -7,7 +7,7 @@ echo '
 # does a file from today exist?
 if [ ! `find "$TMP_FOLDER/random-fremdwort-title.txt" -daystart -mtime 0 2> /dev/null` ]; 
 then
-	echo "fetching fremdwort archiv list.."
+	#echo "fetching fremdwort archiv list.."
 	curl http://neueswort.de/archiv/ > /tmp/fremdwoerter.html
 	cat /tmp/fremdwoerter.html | grep 'rel="bookmark"' | sed -e "s/\s*<a href=\"//g" | sed -e "s/\".*//g" > /tmp/alle-fremdwoerter.lst
 
@@ -16,10 +16,10 @@ then
 
 	r=$RANDOM
 	rand=$(( r %= 200 ))
-	echo "random: " $rand
+	#echo "random: " $rand
 
 	wort=$(cat /tmp/alle-fremdwoerter.lst | head -n$rand | tail -1)
-	echo "wort: " $wort
+	#echo "wort: " $wort
 
 	curl $wort > /tmp/random-fremdwort.html
 
