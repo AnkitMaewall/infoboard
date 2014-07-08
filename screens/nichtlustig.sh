@@ -15,4 +15,11 @@ then
 		> $TMP_FOLDER/nichtlustig.jpg
 fi
 
+if [ -f $TMP_FOLDER/nichtlustig.jpg ]; then
+	FILESIZE=$(stat -c%s "$TMP_FOLDER/nichtlustig.jpg")
+	if [[ ! $FILESIZE > 0 ]] ;then
+		rm $TMP_FOLDER/nichtlustig.jpg
+	fi
+fi
+
 echo '<img width="50%" src="/tmp/nichtlustig.jpg" />'

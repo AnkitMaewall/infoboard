@@ -5,9 +5,15 @@ exports.config = {
 	animated_transitions: false
 	, screens: [
 		{
+			  cmd: "/bin/bash ./screens/random-fremdwort.sh"
+			, hold_for: tick
+		}
+/*
+		, {
 			  cmd: "/bin/bash ./screens/fremdwort.sh"
 			, hold_for: tick
 		}
+*/
 		, {
 			  cmd: "/bin/bash ./screens/wikipedia-featured-article.sh"
 			, hold_for: tick
