@@ -14,9 +14,17 @@ block jumbotron
 		var pageTransition;
 		var currPage = 0;
 
+		var nrt;
+		function noReactionTimeout(id) {
+			displayScreen(id);
+		}
+
 		function displayScreen(_id) {
+			nrt = setTimeout("noReactionTimeout(" + (_id+1) + ")", 60 * 1000);
+			
 			(function(id) {
 				$.get("/screens/" + id, function (data) {
+					clearTimeout(nrt);
 					$(".pt-page-" + id + " #content").html(data);
 
 					if (id > 0) {
