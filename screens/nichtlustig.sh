@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TMP_FOLDER="./static/tmp/"
+TMP_FOLDER=".\static\tmp\"
 
 # does a file from today exist?
 if [ ! `find "$TMP_FOLDER/nichtlustig.jpg" -daystart -mtime 0 2> /dev/null` ]; 

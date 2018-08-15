@@ -42,8 +42,8 @@ audio:not([controls]) {
 
 html {
   font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: auto !important;
+  text-size-adjust: 100%;      
 }
 
 body {
@@ -286,13 +286,7 @@ table {
   }
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
+
 
 html {
   font-size: 62.5%;
@@ -300,7 +294,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -4929,7 +4923,7 @@ a.list-group-item.active > .badge,
   /*
   background-color: #eeeeee;
   */
-  background: url(/img/bg2.png) repeat-y;
+  background: url(https://lh3.googleusercontent.com/q3JfIQ8McKlfi5mRJaT2WjaQBgn1oV8yQWMvFRECNcWL6sD-XHY9ZI9QxFyv-_9kqNTZ5H8qQH3ox1pCnndTybTwCg9SV2XqbVmGGvkHpkOpb01yp9qPR2uiEjnc91ZqVt-gfZaJIuU=w2400) repeat-y;
 }
 
 .jumbotron h1 {

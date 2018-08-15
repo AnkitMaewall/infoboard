@@ -1,5 +1,5 @@
 #!/bin/bash
-TMP_FOLDER="./static/tmp/"
+TMP_FOLDER=".\static\tmp\"
 
 echo '
 	<div style="text-align:left;">'

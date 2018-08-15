@@ -22,11 +22,11 @@ server.listen(process.env.PORT || 8001, function() {
 	console.log('Listening on port ' + server.address().port);
 });
 
-app.get('/', function(req, res) {
+app.get("/", function(req, res) {
 	res.render('index', { config: config });
 });
 
-app.get('/screens/:id', function(req, res) {
+app.get('/screens:id/', function(req, res) {
 	var id = req.params.id;
 
 	getScreen(res, id, function(data) {

@@ -23,7 +23,7 @@ block jumbotron
 			nrt = setTimeout("noReactionTimeout(" + (_id+1) + ")", 60 * 1000);
 			
 			(function(id) {
-				$.get("/screens/" + id, function (data) {
+				$.get("\"screens\"" + id, function (data) {
 					clearTimeout(nrt);
 					$(".pt-page-" + id + " #content").html(data);
 
@@ -52,7 +52,7 @@ block jumbotron
 			currPage = (currPage+1) % #{config.screens.length};
 		}
 
-		$(function() {
+		$( document ).on( "load", function() {
 			pageTransition = PageTransitions();
 			pageTransition.init();
 			displayScreen(0);

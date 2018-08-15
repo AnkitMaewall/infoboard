@@ -1,5 +1,5 @@
 #!/bin/bash
-TMP_FOLDER="./static/tmp/"
+TMP_FOLDER=".\static\tmp\"
 
 # does a file from today exist?
 if [ ! `find "/tmp/wiki-faotd.xml" -daystart -mtime 0 2> /dev/null` ]; 

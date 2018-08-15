@@ -1,36 +1,15 @@
-//var tick = 1000 * 60 * 60;
-var tick = 1000 * 30;
+var cmd=require('node-cmd');
 
 exports.config = {
-	animated_transitions: false
+	animated_transitions: true
 	, screens: [
 		{
-			  cmd: "/bin/bash ./screens/random-fremdwort.sh"
-			, hold_for: tick
-		}
-/*
-		, {
-			  cmd: "/bin/bash ./screens/fremdwort.sh"
-			, hold_for: tick
-		}
-*/
-		, {
-			  cmd: "/bin/bash ./screens/wikipedia-featured-article.sh"
-			, hold_for: tick
+				cmd: ".\screens\fortune.sh"
+			, hold_for: 5000 //ms
 		}
 		, {
-			  cmd: "/bin/bash ./screens/nichtlustig.sh"
-			, hold_for: tick
+				cmd: ".\screens\clock.sh"
+			, hold_for: 1000 
 		}
-		/*
-		, {
-			  cmd: "/bin/sh ./screens/quote-of-the-day.sh"
-			, hold_for: tick
-		}
-		, {
-			  cmd: "/bin/sh ./screens/clock.sh"
-			, hold_for: tick
-		}
-		*/
 	]
 };
